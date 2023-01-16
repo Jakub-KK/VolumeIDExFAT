@@ -12,6 +12,8 @@
 
 #include "arguments.h"
 #include "exception.h"
+#include "exfat.h"
+#include "hex.h"
 #include "usage.h"
 
 #include "volumeID.h"
@@ -26,11 +28,13 @@ void ExecuteProgram(const Arguments& arguments) {
     // report parameters
     if (arguments.optVerbose) {
         cout
-            << "TODO: show parsed inputs here" << endl
+            << "Drive device name: " << arguments.driveDeviceName << endl
+            << "exFAT volume serial number to set: " << hex(arguments.volumeSerialNumber) << endl
             << endl
             ;
     }
-    // TODO: perform program operation here
+    // try to open the drive and change volume serial number if non-corrupted exFAT volume is detected
+    ExFATChangeVolumeSerialNumber(arguments.driveDeviceName, arguments.volumeSerialNumber);
     // report success
     if (arguments.optVerbose) {
         cout << "Operation performed successfully." << endl;
@@ -53,6 +57,8 @@ int ExecuteProgram(const string& executableName, const vector<string>& args) {
         }
     } catch (const ProgramArgumentsError& e) {
         PrintErrorAndUsage(arguments, e.what());
+    } catch (const ExFATModificationError& e) {
+        PrintErrorOnly(arguments, e.what(), e.details());
     } catch (const std::exception& e) {
         PrintErrorOnly(arguments, "Program error.", e.what());
     } catch (...) {

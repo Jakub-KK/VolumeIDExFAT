@@ -14,6 +14,8 @@ struct Arguments {
     bool optNoLegal;
     bool optNoBanner;
     bool optVerbose;
+    std::string driveDeviceName;
+    uint32_t volumeSerialNumber;
 };
 
 void ParseArguments(const std::vector<std::string>& args, Arguments& arguments);

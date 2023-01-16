@@ -41,11 +41,14 @@ void PrintUsage(const Arguments& arguments) {
         << endl
         << "Usage: " << arguments.executableName << " -i_accept_license <drive>: <XXXX-XXXX> [-nobanner] [-nowarning] [-verbose]" << endl
         << "  -i_accept_license   required as a statement that you read and accept the license terms (see LICENSE.txt)" << endl
+        << "  <drive>:            drive letter of target volume, \":\" must be included" << endl
+        << "  <XXXX-XXXX>         new serial number, X is hexadecimal digit" << endl
         << "  -nobanner           optional, do not display the startup banner" << endl
         << "  -nowarning          optional, do not display the warning about potential data loss" << endl
         << "  -verbose            optional, display a detailed progress information" << endl
         << endl
         << "This program will change the serial number of an exFAT volume." << endl
+        << "Administrator privileges are not needed when operating on \"ejectable\" volumes (such as USB removable devices)." << endl
         << "Before making any changes the exFAT filesystem boot records will be checked for consistency," << endl
         << "if an invalid state is detected the program will abort (try using 'chkdsk' program to fix the volume)." << endl
         ;

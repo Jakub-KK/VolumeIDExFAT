@@ -11,8 +11,12 @@
 
 #pragma once
 
+#include <filesystem>
 #include <format>
 #include <iostream>
+#include <memory>
+#include <regex>
+#include <sstream>
 #include <string>
 #include <vector>
 
@@ -23,4 +27,13 @@
 // Windows Header Files
 #include <windows.h>
 
+#include <winioctl.h> // for FSCTL_LOCK_VOLUME, excluded when WIN32_LEAN_AND_MEAN
+
 #include <assert.h>
+
+// project headers
+
+#include "array_length.h"
+#include "hex.h"
+
+#endif //PCH_H

@@ -18,3 +18,14 @@ class ProgramArgumentsError : public RuntimeError {
 public:
     explicit ProgramArgumentsError(const std::string& message) : RuntimeError(message) {}
 };
+
+class ExFATModificationError : public RuntimeError {
+public:
+    explicit ExFATModificationError(const std::string& message, const std::string& details) : RuntimeError(message), _details(details) {}
+    explicit ExFATModificationError(const std::string& message) : RuntimeError(message), _details("") {}
+
+    virtual const char* details() const { return _details.c_str(); }
+
+private:
+    const std::string _details; // copy of std::string to prevent removing its data from memory if temporary
+};

@@ -80,6 +80,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="arguments.cpp" />
+    <ClCompile Include="error.cpp" />
+    <ClCompile Include="exfat.cpp" />
+    <ClCompile Include="hex.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -93,8 +96,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="arguments.h" />
+    <ClInclude Include="array_length.h" />
+    <ClInclude Include="error.h" />
     <ClInclude Include="exception.h" />
+    <ClInclude Include="exfat.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="hex.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="usage.h" />
     <ClInclude Include="volumeID.h" />
