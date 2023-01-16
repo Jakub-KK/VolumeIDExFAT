@@ -16,5 +16,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
+    <None Include="LICENSE.txt" />
   </ItemGroup>
 </Project>
