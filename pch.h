@@ -11,6 +11,11 @@
 
 #pragma once
 
+#include <format>
+#include <iostream>
+#include <string>
+#include <vector>
+
 #include "targetver.h"
 
 // Exclude rarely-used stuff from Windows headers
