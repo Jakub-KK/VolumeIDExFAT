@@ -1,0 +1,10 @@
+# top-most EditorConfig file (see https://editorconfig.org/)
+root = true
+
+[**/*.{cpp,h,ixx}]
+charset = utf-8                    # Unicode (UTF-8 without signature), VS 2022 17.3 by default saves "utf-8-bom" which is Unicode (UTF-8 with signature)
+end_of_line = crlf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 4
