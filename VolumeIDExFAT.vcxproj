@@ -102,9 +102,13 @@
     <ClInclude Include="exfat.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="hex.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="usage.h" />
     <ClInclude Include="volumeID.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="VolumeIDExFAT.rc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="LICENSE.txt" />
