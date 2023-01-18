@@ -3,9 +3,11 @@
 //
 // Please refer to LICENSE.txt for details about distribution and modification
 
-#pragma once
+module;
 
 #include <stdexcept>
+
+export module exceptions;
 
 class RuntimeError : public std::runtime_error {
 public:
@@ -14,12 +16,12 @@ private:
     const std::string _message; // copy of std::string to prevent removing its data from memory if temporary
 };
 
-class ProgramArgumentsError : public RuntimeError {
+export class ProgramArgumentsError : public RuntimeError {
 public:
     explicit ProgramArgumentsError(const std::string& message) : RuntimeError(message) {}
 };
 
-class ExFATModificationError : public RuntimeError {
+export class ExFATModificationError : public RuntimeError {
 public:
     explicit ExFATModificationError(const std::string& message, const std::string& details) : RuntimeError(message), _details(details) {}
     explicit ExFATModificationError(const std::string& message) : RuntimeError(message), _details("") {}

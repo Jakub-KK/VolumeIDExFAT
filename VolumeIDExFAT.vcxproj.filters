@@ -15,28 +15,31 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="arguments.cpp">
+    <ClCompile Include="error.ixx">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="error.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="exfat.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="hex.cpp">
+    <ClCompile Include="exfat.ixx">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="usage.cpp">
+    <ClCompile Include="arguments.ixx">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="volumeID.cpp">
+    <ClCompile Include="exceptions.ixx">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="pch.cpp">
+    <ClCompile Include="usage.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="volumeID.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hex.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="array_length.ixx">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -45,34 +48,10 @@
     <None Include="LICENSE.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="arguments.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="array_length.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="error.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="exception.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="exfat.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hex.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="usage.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="volumeID.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="pch.h">
+    <ClInclude Include="win.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="targetver.h">

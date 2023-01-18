@@ -50,8 +50,6 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <PrecompiledHeader>Use</PrecompiledHeader>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -68,8 +66,6 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <PrecompiledHeader>Use</PrecompiledHeader>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -79,33 +75,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="arguments.cpp" />
-    <ClCompile Include="error.cpp" />
-    <ClCompile Include="exfat.cpp" />
-    <ClCompile Include="hex.cpp" />
+    <ClCompile Include="arguments.ixx" />
+    <ClCompile Include="array_length.ixx" />
+    <ClCompile Include="error.ixx" />
+    <ClCompile Include="exceptions.ixx" />
+    <ClCompile Include="exfat.ixx" />
+    <ClCompile Include="hex.ixx" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="pch.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="usage.cpp" />
-    <ClCompile Include="volumeID.cpp" />
+    <ClCompile Include="usage.ixx" />
+    <ClCompile Include="volumeID.ixx" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="arguments.h" />
-    <ClInclude Include="array_length.h" />
-    <ClInclude Include="error.h" />
-    <ClInclude Include="exception.h" />
-    <ClInclude Include="exfat.h" />
-    <ClInclude Include="pch.h" />
-    <ClInclude Include="hex.h" />
+    <ClInclude Include="win.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="usage.h" />
-    <ClInclude Include="volumeID.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="VolumeIDExFAT.rc" />

@@ -3,17 +3,18 @@
 //
 // Please refer to LICENSE.txt for details about distribution and modification
 
-// precompiled headers
-#include "pch.h"
+module;
 
 #include <format>
 #include <string>
-#include <Windows.h>
 
-#include "error.h"
+#include "win.h"
 
-std::string GetLastErrorString(const std::string& errorContext) {
-    using std::string;
+export module error;
+
+using std::string;
+
+export string GetLastErrorString(const string& errorContext) {
     using std::erase_if;
     using std::unique_ptr;
     using std::remove_pointer;

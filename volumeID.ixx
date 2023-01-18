@@ -3,20 +3,19 @@
 //
 // Please refer to LICENSE.txt for details about distribution and modification
 
-// precompiled headers
-#include "pch.h"
+module;
 
 #include <iostream>
 #include <string>
 #include <vector>
 
-#include "arguments.h"
-#include "exception.h"
-#include "exfat.h"
-#include "hex.h"
-#include "usage.h"
+export module volumeID;
 
-#include "volumeID.h"
+import arguments;
+import exceptions;
+import exfat;
+import hex;
+import usage;
 
 using std::string;
 using std::vector;
@@ -41,7 +40,7 @@ void ExecuteProgram(const Arguments& arguments) {
     }
 }
 
-int ExecuteProgram(const string& executableName, const vector<string>& args) {
+export int ExecuteProgram(const string& executableName, const vector<string>& args) {
     Arguments arguments{ executableName };
     try {
         bool bannerDone{ false };

@@ -3,14 +3,11 @@
 //
 // Please refer to LICENSE.txt for details about distribution and modification
 
-// precompiled headers
-#include "pch.h"
-
 #include <vector>
 #include <string>
 #include <filesystem>
 
-#include "volumeID.h"
+import volumeID;
 
 using std::string;
 using std::vector;

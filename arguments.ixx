@@ -3,8 +3,7 @@
 //
 // Please refer to LICENSE.txt for details about distribution and modification
 
-// precompiled headers
-#include "pch.h"
+module;
 
 #include <format>
 #include <iostream>
@@ -13,13 +12,23 @@
 #include <string>
 #include <vector>
 
-#include "exception.h"
+export module arguments;
 
-#include "arguments.h"
+import exceptions;
 
 using std::string;
 using std::vector;
 using std::format;
+
+export struct Arguments {
+    const string executableName;
+    bool isLicenseAccepted;
+    bool optNoLegal;
+    bool optNoBanner;
+    bool optVerbose;
+    string driveDeviceName;
+    uint32_t volumeSerialNumber;
+};
 
 string ParseDrive(const string& arg) {
     using std::regex;
@@ -51,7 +60,7 @@ uint32_t ParseVolumeSerialNumber(const string& arg) {
     return result;
 }
 
-void ParseArguments(const vector<string>& args, Arguments& arguments) {
+export void ParseArguments(const vector<string>& args, Arguments& arguments) {
     using namespace std::string_literals;
 
     if (args.size() == 0) {

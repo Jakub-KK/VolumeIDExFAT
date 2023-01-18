@@ -3,21 +3,21 @@
 //
 // Please refer to LICENSE.txt for details about distribution and modification
 
-// precompiled headers
-#include "pch.h"
+module;
 
 #include <assert.h>
 #include <format>
 #include <memory>
 #include <string>
-#include <Windows.h>
 
-#include "array_length.h"
-#include "exception.h"
-#include "hex.h"
-#include "error.h"
+#include "win.h"
 
-#include "exfat.h"
+export module exfat;
+
+import array_length;
+import error;
+import exceptions;
+import hex;
 
 using std::string;
 
@@ -55,7 +55,7 @@ void ExFATCreateChecksumSector(uint8_t* const sector, uint32_t count, const uint
     }
 }
 
-void ExFATChangeVolumeSerialNumber(const string driveDeviceName, const uint32_t volumeSerialNumber) {
+export void ExFATChangeVolumeSerialNumber(const string driveDeviceName, const uint32_t volumeSerialNumber) {
     using std::unique_ptr;
     using std::remove_pointer;
     using std::format;

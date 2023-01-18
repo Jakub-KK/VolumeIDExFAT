@@ -3,9 +3,11 @@
 //
 // Please refer to LICENSE.txt for details about distribution and modification
 
-#pragma once
+export module array_length;
 
-#include <string>
-#include <vector>
-
-int ExecuteProgram(const std::string& executableName, const std::vector<std::string>& args);
+/// <summary>Compile-time computation of array length</summary>
+export
+template <typename T, size_t N>
+constexpr size_t array_length(T(&)[N]) {
+    return N;
+}

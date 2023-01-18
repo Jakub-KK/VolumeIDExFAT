@@ -3,23 +3,22 @@
 //
 // Please refer to LICENSE.txt for details about distribution and modification
 
-// precompiled headers
-#include "pch.h"
+module;
 
 #include <iostream>
 #include <string>
 #include <vector>
 
-#include "arguments.h"
+export module usage;
 
-#include "usage.h"
+import arguments;
 
 using std::string;
 using std::cerr;
 using std::cout;
 using std::endl;
 
-void PrintBanner(const Arguments& arguments) {
+export void PrintBanner(const Arguments& arguments) {
     if (!arguments.optNoBanner) {
         cout
             << "VolumeIdExFAT v1.0 - Set serial number of exFAT volume" << endl
@@ -76,12 +75,12 @@ void PrintWarningAndDisclaimer(const Arguments& arguments) {
     }
 }
 
-void PrintErrorOnly(const Arguments& arguments, const string& errorMessage, const string& errorDetailsMessage) {
+export void PrintErrorOnly(const Arguments& arguments, const string& errorMessage, const string& errorDetailsMessage = "") {
     PrintError(arguments, errorMessage, errorDetailsMessage);
     PrintWarningAndDisclaimer(arguments);
 }
 
-void PrintErrorAndUsage(const Arguments& arguments, const string& errorMessage, const string& errorDetailsMessage) {
+export void PrintErrorAndUsage(const Arguments& arguments, const string& errorMessage, const string& errorDetailsMessage = "") {
     PrintError(arguments, errorMessage, errorDetailsMessage);
     PrintUsage(arguments);
     PrintWarningAndDisclaimer(arguments);
