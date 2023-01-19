@@ -3,19 +3,13 @@
 //
 // Please refer to LICENSE.txt for details about distribution and modification
 
-module;
-
-#include <format>
-#include <iostream>
-#include <regex>
-#include <sstream>
-#include <string>
-#include <vector>
-
 export module arguments;
+
+import std;
 
 import exceptions;
 
+using std::uint32_t;
 using std::string;
 using std::vector;
 using std::format;

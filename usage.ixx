@@ -3,13 +3,9 @@
 //
 // Please refer to LICENSE.txt for details about distribution and modification
 
-module;
-
-#include <iostream>
-#include <string>
-#include <vector>
-
 export module usage;
+
+import std;
 
 import arguments;
 

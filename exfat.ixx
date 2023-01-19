@@ -6,19 +6,20 @@
 module;
 
 #include <assert.h>
-#include <format>
-#include <memory>
-#include <string>
 
 #include "win.h"
 
 export module exfat;
+
+import std;
 
 import array_length;
 import error;
 import exceptions;
 import hex;
 
+using std::uint8_t;
+using std::uint32_t;
 using std::string;
 
 // offset in main/backup boot sector subregion with data not participating in calculating checksum, nor comparing main and boot sectors

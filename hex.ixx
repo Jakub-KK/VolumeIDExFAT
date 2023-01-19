@@ -3,14 +3,13 @@
 //
 // Please refer to LICENSE.txt for details about distribution and modification
 
-module;
-
-#include <iostream>
-#include <iomanip>
-#include <limits>
-
 export module hex;
 
+import std;
+
+using std::uint8_t;
+using std::uint16_t;
+using std::uint32_t;
 using std::endl;
 using std::ios_base;
 using std::numeric_limits;

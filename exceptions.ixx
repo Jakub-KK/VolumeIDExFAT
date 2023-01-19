@@ -3,11 +3,9 @@
 //
 // Please refer to LICENSE.txt for details about distribution and modification
 
-module;
-
-#include <stdexcept>
-
 export module exceptions;
+
+import std;
 
 class RuntimeError : public std::runtime_error {
 public:

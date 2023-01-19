@@ -3,13 +3,9 @@
 //
 // Please refer to LICENSE.txt for details about distribution and modification
 
-module;
-
-#include <iostream>
-#include <string>
-#include <vector>
-
 export module volumeID;
+
+import std;
 
 import arguments;
 import exceptions;
@@ -39,6 +35,10 @@ void ExecuteProgram(const Arguments& arguments) {
         cout << "Operation performed successfully." << endl;
     }
 }
+
+// defined in stdlib.h, missing in std module
+constexpr int EXIT_SUCCESS{ 0 };
+constexpr int EXIT_FAILURE{ 1 };
 
 export int ExecuteProgram(const string& executableName, const vector<string>& args) {
     Arguments arguments{ executableName };

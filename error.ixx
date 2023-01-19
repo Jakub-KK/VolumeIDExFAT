@@ -5,12 +5,11 @@
 
 module;
 
-#include <format>
-#include <string>
-
 #include "win.h"
 
 export module error;
+
+import std;
 
 using std::string;
 
