@@ -1,0 +1,43 @@
+# Compiles "release" configuration of the project and creates release when "v*" tag is pushed to repository
+
+name: Release On Tag Push
+
+on:
+  push:
+    # Sequence of patterns matched against refs/tags
+    tags:
+    - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+
+env:
+  SOLUTION_FILE_PATH: . # Path to the solution file relative to the root of the project
+
+jobs:
+  build:
+    name: Upload Release Asset
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Add MSBuild to PATH
+        uses: microsoft/setup-msbuild@v1.3.1
+        with:
+          vs-prerelease: true # possibly unneeded, depends on the software installed on the runner
+          vs-version: '[17.6,)' # must support C++23 named modules
+
+      - name: Build Release x64
+        working-directory: ${{env.GITHUB_WORKSPACE}}
+        run: msbuild /m /p:Configuration=Release /p:Platform=x64 ${{env.SOLUTION_FILE_PATH}}
+
+      - name: Create Archive
+        uses: thedoctor0/zip-release@0.7.6
+        with:
+          command: "mkdir -p release-zip; cp -f x64/Release/VolumeIDExFAT.exe LICENSE.txt README.md release-zip"
+          directory: release-zip
+          filename: VolumeIDExFAT.zip
+          type: zip
+
+      - name: Release
+        uses: softprops/action-gh-release@v0.1.15
+        with:
+          files: release-zip/VolumeIDExFAT.zip
