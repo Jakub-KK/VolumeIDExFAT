@@ -1,6 +1,8 @@
 # VolumeIdExFAT
 ## A Windows command-line tool to set the serial number of an exFAT volume.
 
+![MSBuild](https://github.com/Jakub-KK/VolumeIDExFAT/actions/workflows/msbuild.yml/badge.svg)
+
 ```
 Usage: VolumeIdExFAT.exe [-nobanner] [-verbose] <drive>: <XXXX-XXXX>
 
